@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Hi {{name}}!
+<br>
+Create your cheeseburger!
+<br>
+<br>
+<form action="/create-cheeseburger" method="post">
+    Would you like Mayo?
+    <select name="Mayo">
+        <option selected disabled>Mayo</option>
+        <option value="true">yes</option>
+        <option value="false">no</option>
+    </select>
+    <br>
+    Enter the number of patties you would like:
+    <input type="number" placeholder="" name="patties"/>
+    <br>
+    <input type ="number" placeholder="Number of buns" name="buns"/>
+
+    <select name="gamePlatform">
+        <option selected disabled>Platform</option>
+        <option value="pc">PC</option>
+        <option value="ps4">PS4</option>
+        <option value="xbone">XBox One</option>
+        <option value="wiiu">Wii U</option>
+    </select>
+    <input type="number" placeholder="Release Year" name="gameYear"/>
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
