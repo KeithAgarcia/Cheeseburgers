@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 public class Customer {
     String name;
+    ArrayList<CheeseBurger> cheeseBurgers = new ArrayList<>();
 
     public Customer(String name) {
         this.name = name;

@@ -7,35 +7,46 @@
 <body>
 Hi {{name}}!
 <br>
+<br>
 Create your cheeseburger!
 <br>
 <br>
 <form action="/create-cheeseburger" method="post">
     Would you like Mayo?
-    <select name="Mayo">
-        <option selected disabled>Mayo</option>
-        <option value="true">yes</option>
-        <option value="false">no</option>
+    <select name="mayo">
+        <option selected disabled></option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
     <br>
     Enter the number of patties you would like:
     <input type="number" placeholder="" name="patties"/>
     <br>
     Enter the number of buns you would like:
-    <input type ="number" placeholder="Number of buns" name="buns"/>
+    <input type ="number" placeholder="" name="buns"/>
     <br>
-    Enter the number of
-
-    <select name="gamePlatform">
-        <option selected disabled>Platform</option>
-        <option value="pc">PC</option>
-        <option value="ps4">PS4</option>
-        <option value="xbone">XBox One</option>
-        <option value="wiiu">Wii U</option>
-    </select>
-    <input type="number" placeholder="Release Year" name="gameYear"/>
+    Enter the number of bacon you would like:
+    <input type="number" placeholder="" name = "bacon"/>
+    <br>
+    Any special instructions?
+    <input type = "text" placeholder= "" name = "instructions"/>
     <button type="submit">Submit</button>
 </form>
-
+<br>
+<ol>
+    {{#cheeseBurgers}}
+    <li>Mayo: {{mayo}}
+        <br>
+        Number of patties: {{patties}}
+        <br>
+        Number of buns: {{buns}}
+        <br>
+        Number of bacon: {{bacon}}
+        <br>
+        Special Instructions: {{instructions}}
+    </li>
+    <br>
+    {{/cheeseBurgers}}
+</ol>
 </body>
 </html>

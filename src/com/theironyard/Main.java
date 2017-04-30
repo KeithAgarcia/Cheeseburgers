@@ -49,5 +49,36 @@ public class Main {
                     return  "";
                 })
         );
+
+        Spark.post(
+                "/create-cheeseburger",
+                (request, response) -> {
+                    Session session = request.session();
+                    String name = session.attribute("customerName");
+                    Customer customer = customers.get(name);
+                    String mayo = request.queryParams("mayo");
+                    int patties = Integer.valueOf(request.queryParams("patties"));
+                    int buns = Integer.valueOf(request.queryParams("buns"));
+                    int bacon = Integer.valueOf(request.queryParams("bacon"));
+                    String instructions = request.queryParams("instructions");
+
+                    CheeseBurger cheeseBurger = new CheeseBurger(mayo, patties, buns, bacon, instructions);
+
+                    customer.cheeseBurgers.add(cheeseBurger);
+                    response.redirect("/");
+                    return "";
+                }
+        );
+
+        Spark.post(
+                "/logout",
+                ((request, response) ->{
+                    Session session = request.session();
+                    session.invalidate();
+                    response.redirect("/");
+                    return  "";
+                })
+        );
     }
 }
+
