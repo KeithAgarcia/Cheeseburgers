@@ -15,6 +15,7 @@ public class Main {
         cheeseBurgers.add(new CheeseBurger("yes", 2, 3, 4, "medium-rare"));
         cheeseBurgers.add(new CheeseBurger("no", 1, 2, 3, "put a little ketchup"));
         cheeseBurgers.add(new CheeseBurger("no", 3, 2, 4, "rare"));
+        cheeseBurgers.add(new CheeseBurger("yes", 4, 0, 0, "medium-rare"));
 
         Spark.get(
                 "/cheeseburgers",
